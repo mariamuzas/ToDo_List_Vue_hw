@@ -1,7 +1,8 @@
 <template>
   <div id="app">
-    <h1>ToDo's</h1>
+    <h1>{{title}}</h1>
     <form v-on:submit.prevent="saveNewTodo">   
+      <label for="todo-input">Add a ToDo:</label>
       <input id="new-item" type="text" v-model="newTodo.name">
 
       <label for="high">High</label>
@@ -27,6 +28,7 @@
 export default {
   data() {
     return {
+      title: "ToDo's",
       todos: [
         {name:"Buy shopping", priority: "high"},
         {name:"Clean bathroom", priority: "low"},
